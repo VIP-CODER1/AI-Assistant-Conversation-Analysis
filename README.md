@@ -2,6 +2,10 @@
 
 Automated analysis platform for e-commerce assistant conversations. The system ingests conversation/message data from MongoDB, computes quality and engagement insights, and presents them in a dashboard for faster weekly review.
 
+<img width="1919" height="821" alt="image" src="https://github.com/user-attachments/assets/432f0478-706d-4411-bee8-96a9afd89b93" />
+<img width="888" height="852" alt="sa" src="https://github.com/user-attachments/assets/946e2aed-9bec-4cdf-8f19-e40edbeee295" />
+
+
 ## Problem Statement
 Manual conversation review does not scale across brands. This project automates insight generation to identify where the assistant performs well and where it needs improvement.
 
