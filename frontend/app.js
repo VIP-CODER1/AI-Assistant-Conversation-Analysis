@@ -1,6 +1,8 @@
 /* ── AI Conversation Insights Dashboard ─────────────────────────────────── */
 
-const API = window.location.port === '8000' ? '' : 'http://localhost:8000';
+const API = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+  ? 'http://localhost:8000'
+  : 'https://ai-assistant-conversation-analysis.onrender.com';
 
 const BRAND_SHORT = {
   '680a0a8b70a26f7a0e24eedd': 'Brand A',
