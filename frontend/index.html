@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Helio — AI Conversation Insights</title>
+  <meta name="description" content="Automated analysis of AI assistant conversations across e-commerce brands — surface insights, detect issues, and improve assistant performance."/>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">HI</div>
+      <div class="logo-text">
+        Helio Insights
+        <span>Conversation Analysis</span>
+      </div>
+    </div>
+
+    <div class="nav-section-title">Overview</div>
+    <a class="nav-item active" data-section="overview" id="nav-overview" href="#">
+      <span class="icon">•</span> Dashboard
+    </a>
+    <a class="nav-item" data-section="brands" id="nav-brands" href="#">
+      <span class="icon">•</span> Brand Comparison
+    </a>
+
+    <div class="nav-section-title">Analysis</div>
+    <a class="nav-item" data-section="health" id="nav-health" href="#">
+      <span class="icon">•</span> Conversation Health
+    </a>
+    <a class="nav-item" data-section="topics" id="nav-topics" href="#">
+      <span class="icon">•</span> Topic Analysis
+    </a>
+    <a class="nav-item" data-section="engagement" id="nav-engagement" href="#">
+      <span class="icon">•</span> Product Engagement
+    </a>
+
+    <div class="nav-section-title">Insights</div>
+    <a class="nav-item" data-section="insights" id="nav-insights" href="#">
+      <span class="icon">•</span> Actionable Insights
+    </a>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div>
+        <div class="page-title">AI Conversation Analysis</div>
+        <div class="page-subtitle">Automated insights from your e-commerce assistant conversations</div>
+      </div>
+      <div id="status-badge" class="status-badge loading">
+        <div class="dot"></div> Connecting…
+      </div>
+    </div>
+
+    <!-- ══════════ OVERVIEW ══════════ -->
+    <section class="section active" id="section-overview">
+      <div class="stat-grid" id="overview-stats">
+        <div class="loading-overlay" style="grid-column:1/-1"><div class="spinner"></div>Loading…</div>
+      </div>
+      <div class="grid-2">
+        <div class="card" id="overview-dropoff-card">
+          <div class="card-header">
+            <span class="card-title">Drop-off & Frustration</span>
+            <span class="card-badge">Health Signals</span>
+          </div>
+          <div id="overview-dropoff-chart"></div>
+        </div>
+        <div class="card" id="overview-events-card">
+          <div class="card-header">
+            <span class="card-title">User Engagement Events</span>
+            <span class="card-badge">Interactions</span>
+          </div>
+          <div id="overview-events-chart"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Peak Query Hours (UTC)</span>
+          <span class="card-badge">Activity Heatmap</span>
+        </div>
+        <div class="hour-heatmap" id="peak-hours-heatmap"></div>
+        <div class="hour-labels" id="peak-hours-labels"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ BRANDS ══════════ -->
+    <section class="section" id="section-brands">
+      <div class="brand-grid" id="brand-cards"></div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Messages per Brand</span>
+          <span class="card-badge">Volume</span>
+        </div>
+        <div class="bar-chart" id="brand-msg-chart"></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Avg Messages per Conversation</span>
+            <span class="card-badge">Depth</span>
+          </div>
+          <div class="bar-chart" id="brand-avg-chart"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Event Interactions per Brand</span>
+            <span class="card-badge">Engagement</span>
+          </div>
+          <div class="bar-chart" id="brand-events-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ HEALTH ══════════ -->
+    <section class="section" id="section-health">
+      <div class="stat-grid" id="health-stats"></div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Response Length Distribution</span>
+            <span class="card-badge">Agent Quality</span>
+          </div>
+          <div class="bar-chart" id="resp-len-chart"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Drop-off &amp; Frustration by Brand</span>
+            <span class="card-badge">Per Brand</span>
+          </div>
+          <div class="bar-chart" id="brand-health-chart"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">😤 Frustrated User Examples</span>
+          <span class="card-badge">Signal</span>
+        </div>
+        <div id="frustration-examples"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ TOPICS ══════════ -->
+    <section class="section" id="section-topics">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Top Question Topics</span>
+            <span class="card-badge">All Brands</span>
+          </div>
+          <div class="bar-chart" id="topic-freq-chart"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Unanswered Topics</span>
+            <span class="card-badge">Gaps</span>
+          </div>
+          <div class="bar-chart" id="unanswered-topics-chart"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Topic Breakdown by Brand</span>
+          <span class="card-badge">Comparative</span>
+        </div>
+        <div id="topics-by-brand"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ ENGAGEMENT ══════════ -->
+    <section class="section" id="section-engagement">
+      <div class="stat-grid" id="engagement-stats"></div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">User Interaction Events</span>
+          <span class="card-badge">All Brands</span>
+        </div>
+        <div class="pill-grid" id="event-pills"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Top Suggested Products (by frequency)</span>
+          <span class="card-badge">Recommendations</span>
+        </div>
+        <div class="bar-chart" id="top-products-chart"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Events by Brand</span>
+          <span class="card-badge">Per Brand</span>
+        </div>
+        <div id="events-by-brand"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ INSIGHTS ══════════ -->
+    <section class="section" id="section-insights">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">💡 Actionable Insights</span>
+          <span class="card-badge">Auto-generated</span>
+        </div>
+        <div class="insight-list" id="insights-list">
+          <div class="loading-overlay"><div class="spinner"></div>Generating insights…</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "helioai-conversation-analysis-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static frontend dashboard for AI conversation insights",
+  "scripts": {
+    "dev": "serve -l 5500 .",
+    "start": "serve -l 5500 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}
