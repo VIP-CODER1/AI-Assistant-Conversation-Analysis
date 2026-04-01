@@ -3,7 +3,6 @@
 Automated analysis platform for e-commerce assistant conversations. The system ingests conversation/message data from MongoDB, computes quality and engagement insights, and presents them in a dashboard for faster weekly review.
 
 <img width="1919" height="821" alt="image" src="https://github.com/user-attachments/assets/432f0478-706d-4411-bee8-96a9afd89b93" />
-<img width="888" height="852" alt="sa" src="https://github.com/user-attachments/assets/946e2aed-9bec-4cdf-8f19-e40edbeee295" />
 
 
 ## Problem Statement
@@ -25,6 +24,9 @@ Manual conversation review does not scale across brands. This project automates 
 1. MongoDB stores two collections: conversations and messages.
 2. Express API computes analysis through modular analyzers.
 3. Frontend consumes /api/insights and renders dashboard sections.
+
+<img width="888" height="852" alt="sa" src="https://github.com/user-attachments/assets/095bd3ce-06ce-41a6-b1a5-a470f4db6563" />
+
 
 Detailed architecture is documented in [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md).
 
